@@ -1,0 +1,7 @@
+*resharper*
+bin/
+obj/
+packages/
+*.user
+*.suo
+App_Data/
