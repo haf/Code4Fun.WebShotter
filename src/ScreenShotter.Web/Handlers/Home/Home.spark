@@ -1,0 +1,16 @@
+﻿<use namespace="ScreenShotter.Web.Handlers.Home" />
+<viewdata model="ScreenShotter.Web.Handlers.Home.HomeModel" />
+
+<content:title>Home</content:title>
+<content:main>
+    <Form model="SpecModel">
+        <div class="formInput">
+            <p>
+                <LabelFor model="SpecModel" property="TargetUrl" />
+                <InputFor model="SpecModel" property="TargetUrl" />
+                <small>Enter the target URL with or without https</small>
+            </p>
+        </div>
+		<input type="submit" value="Go!" />
+    </Form>
+</content:main>

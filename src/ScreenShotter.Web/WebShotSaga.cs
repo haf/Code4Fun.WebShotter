@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using FluentNHibernate.Mapping;
 using Magnum.StateMachine;
 using MassTransit;
 using MassTransit.Saga;
@@ -46,15 +45,15 @@ namespace ScreenShotter.Web
 					var res = w.GetScreenShot(url);
 					return res;
 				});
-			Bus.Publish(new ComputingImpl());
+			Bus.Publish<Computing>(new{});
 
 			tres.ContinueWith(tsaved =>
 				{
 					sw.Stop();
-					Bus.Publish(new ComputationDoneImpl()
+					Bus.Publish<ComputationDone>(new
 						{
 							TicksTaken = (ulong) sw.ElapsedTicks,
-							CorrelationId = CorrelationId
+							CorrelationId
 						});
 				});
 		}
@@ -79,15 +78,5 @@ namespace ScreenShotter.Web
 
 		public virtual Guid CorrelationId { get; set; }
 		public virtual IServiceBus Bus { get; set; }
-	}
-
-	[Serializable]
-	public class WebShotSagaMap
-		: ClassMap<WebShotSaga>
-	{
-		public WebShotSagaMap()
-		{
-			Id(x => x.CorrelationId);
-		}
 	}
 }

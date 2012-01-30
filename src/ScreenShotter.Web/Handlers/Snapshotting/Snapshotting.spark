@@ -1,0 +1,7 @@
+﻿<use namespace="ScreenShotter.Web.Handlers.Snapshotting" />
+<viewdata model="ScreenShotter.Web.Handlers.Home.WaitModel" />
+
+<content:title>Currently snapshotting...</content:title>
+<content:main>
+    Waiting...
+</content:main>

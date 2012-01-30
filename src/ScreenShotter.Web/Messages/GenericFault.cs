@@ -1,6 +1,3 @@
-using System;
-using MassTransit;
-
 namespace ScreenShotter.Web.Messages
 {
 	public interface GenericFault : TheSagaOfAWebShot

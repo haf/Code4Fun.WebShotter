@@ -74,6 +74,9 @@
     <Reference Include="MassTransit.NHibernateIntegration">
       <HintPath>..\packages\MassTransit.NHibernate.2.0.1.2\lib\net40\MassTransit.NHibernateIntegration.dll</HintPath>
     </Reference>
+    <Reference Include="MassTransit.StructureMapIntegration">
+      <HintPath>..\packages\MassTransit.StructureMap.2.0.1.2\lib\net40\MassTransit.StructureMapIntegration.dll</HintPath>
+    </Reference>
     <Reference Include="MassTransit.Transports.MSMQ">
       <HintPath>..\packages\MassTransit.2.0.1.2\lib\net40\MassTransit.Transports.MSMQ.dll</HintPath>
     </Reference>
@@ -111,7 +114,12 @@
   <ItemGroup>
     <Content Include="fubu-content\FubuMVC.GettingStarted.dll" />
     <Content Include="Global.asax" />
+    <None Include="Handlers\Home\Home.spark" />
     <Content Include="Web.config" />
+    <None Include="Handlers\Snapshotting\Snapshotting.spark" />
+    <None Include="Shared\Application.spark" />
+    <Content Include="Shared\bindings.xml" />
+    <None Include="Shared\__global.spark" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AppStartFubuMVC.cs" />
@@ -119,16 +127,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ImgLauncherController.cs" />
-    <Compile Include="ImgSpecsController.cs" />
+    <Compile Include="Handlers\HandlersMarker.cs" />
+    <Compile Include="Handlers\Home\GetHandler.cs" />
+    <Compile Include="Handlers\Home\HomeModel.cs" />
+    <Compile Include="Handlers\Home\PostHandler.cs" />
+    <Compile Include="Handlers\Snapshotting\GetHandler.cs" />
     <Compile Include="Messages\ComputationDone.cs" />
     <Compile Include="Messages\Compute.cs" />
     <Compile Include="Messages\Computing.cs" />
     <Compile Include="Messages\GenericFault.cs" />
     <Compile Include="Messages\TheSagaOfAWebShot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Handlers\Snapshotting\WaitModel.cs" />
     <Compile Include="WebShotSaga.cs" />
+    <Compile Include="WebShotSagaMap.cs" />
     <Compile Include="WebShotSagaSupport\CutyCaptWrapper.cs" />
+    <Compile Include="Handlers\Home\SpecModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
