@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E316F2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenShotter.Web", "ScreenShotter.Web\ScreenShotter.Web.csproj", "{A20671CB-7755-44E5-87F0-CB31D5A61830}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenShotter.Web.Tests", "ScreenShotter.Web.Tests\ScreenShotter.Web.Tests.csproj", "{A681C45E-F5A6-4F5F-9FDE-AA2641067745}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{A20671CB-7755-44E5-87F0-CB31D5A61830}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A20671CB-7755-44E5-87F0-CB31D5A61830}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A20671CB-7755-44E5-87F0-CB31D5A61830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A681C45E-F5A6-4F5F-9FDE-AA2641067745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A681C45E-F5A6-4F5F-9FDE-AA2641067745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A681C45E-F5A6-4F5F-9FDE-AA2641067745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A681C45E-F5A6-4F5F-9FDE-AA2641067745}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

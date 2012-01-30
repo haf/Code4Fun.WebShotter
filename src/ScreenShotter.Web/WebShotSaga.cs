@@ -23,6 +23,7 @@ namespace ScreenShotter.Web
 					Initially(
 						When(Compute)
 							.Then((saga, message) => saga.LaunchProcessing(message.TargetUrl))
+							.TransitionTo(Computing)
 						);
 
 					During(Computing,
@@ -32,6 +33,8 @@ namespace ScreenShotter.Web
 					       When(Faulted)
 					       	.Then((saga, message) => { })
 					       	.Complete());
+
+					Correlate(Compute).By((s, msg) => s.CorrelationId == msg.CorrelationId);
 				});
 		}
 
@@ -64,7 +67,7 @@ namespace ScreenShotter.Web
 		}
 
 		[Obsolete("For nhib")]
-		protected WebShotSaga()
+		public WebShotSaga()
 		{
 		}
 

@@ -1,5 +1,6 @@
 using System;
 using FluentNHibernate.Mapping;
+using MassTransit.NHibernateIntegration;
 
 namespace ScreenShotter.Web
 {
@@ -9,7 +10,11 @@ namespace ScreenShotter.Web
 	{
 		public WebShotSagaMap()
 		{
+			Not.LazyLoad();
 			Id(x => x.CorrelationId);
+			Map(x => x.CurrentState)
+				.Access.ReadOnlyPropertyThroughCamelCaseField(Prefix.Underscore)
+				.CustomType<StateMachineUserType>();
 		}
 	}
 }
